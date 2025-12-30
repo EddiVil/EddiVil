@@ -37,31 +37,43 @@
 
 ---
 
-## 📡 Tech Pulse
-<!-- TECH-PULSE:START -->
-- 🟡 Terraform     : v1.14.3
-- 🟡 Terragrunt    : v0.96.1
-- 🟡 Kubernetes    : v1.35.0
-- 🟢 Docker        : v19.03.14
-- 🟢 AWS CLI       : 2.32.26
-- 🟢 Python        : v3.15.0a3
+<h2 align="center">📊 Mini Dashboard</h2>
 
-_Last update: 2025-12-30_
-<!-- TECH-PULSE:END -->
+<table align="center">
+  <tr>
+    <td align="center" width="260">
+      <h3>☁️ Cloud Pulse</h3>
+      <p>AWS · Azure · GCP</p>
+      <!-- CLOUD-PULSE:START -->
+      <p><i>checking...</i></p>
+      <!-- CLOUD-PULSE:END -->
+    </td>
+
+    <td align="center" width="260">
+      <h3>📡 Tech Pulse</h3>
+      <p>Terraform · Docker · Kubernetes · Python</p>
+      <!-- TECH-PULSE:START -->
+      <p><i>checking...</i></p>
+      <!-- TECH-PULSE:END -->
+    </td>
+
+    <td align="center" width="260">
+      <h3>🔐 Security Pulse</h3>
+      <p>CVEs · Advisories</p>
+      <!-- SECURITY-PULSE:START -->
+      <p><i>checking...</i></p>
+      <!-- SECURITY-PULSE:END -->
+    </td>
+  </tr>
+</table>
 
 
-
-
-
-
-
-
-
+---
 
 <p align="center">
 
   <a href="https://www.linkedin.com/in/eddi-vilinets/">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="35"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="32"/>
   </a>
 </p>
 
