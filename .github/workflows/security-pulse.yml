@@ -2,7 +2,7 @@ name: Security Pulse
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -13,14 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - run: pip install requests
-      - run: python scripts/security_pulse.py
+
+      - run: python scripts/security_pulse_svg.py
+
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+
+          git add assets/pulse/security.svg
           git diff --cached --quiet || git commit -m "chore: update security pulse"
+          git pull --rebase origin main
           git push
