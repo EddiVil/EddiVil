@@ -1,40 +1,33 @@
 import requests
+import re
 from pathlib import Path
 from datetime import date, datetime, timezone
 
-README = next(
-    p for p in Path(".").iterdir()
-    if p.name.lower() == "readme.md"
-)
+README = Path("README.md")
 
-START = "<!-- TECH-PULSE:START -->"
-END = "<!-- TECH-PULSE:END -->"
+START_RE = r"<!--\s*TECH-PULSE:START\s*-->"
+END_RE   = r"<!--\s*TECH-PULSE:END\s*-->"
+
 DAYS_NEW = 30
-
-HEADERS = {
-    "User-Agent": "tech-pulse-bot"
-}
+HEADERS = {"User-Agent": "tech-pulse-bot"}
 
 def latest_release(repo):
     url = f"https://api.github.com/repos/{repo}/releases/latest"
     r = requests.get(url, headers=HEADERS, timeout=10)
 
     if r.status_code == 404:
-        # fallback to tags
         tags = requests.get(
             f"https://api.github.com/repos/{repo}/tags",
             headers=HEADERS,
             timeout=10
         )
         tags.raise_for_status()
-        tag = tags.json()[0]["name"]
-        return tag, None
+        return tags.json()[0]["name"], None
 
     r.raise_for_status()
     data = r.json()
-    tag = data["tag_name"]
     published = datetime.fromisoformat(data["published_at"].replace("Z", "+00:00"))
-    return tag, published
+    return data["tag_name"], published
 
 
 def status_icon(published_at):
@@ -55,36 +48,29 @@ def main():
     }
 
     lines = []
-
     for name, repo in tools.items():
         try:
             tag, published = latest_release(repo)
-            icon = status_icon(published)
-            lines.append(f"- {icon} {name:<14}: {tag}")
-        except Exception as e:
+            lines.append(f"- {status_icon(published)} {name:<14}: {tag}")
+        except Exception:
             lines.append(f"- 🔴 {name:<14}: unavailable")
 
     content = README.read_text(encoding="utf-8")
 
-    block = (
-        f"{START}\n"
-        + "\n".join(lines) +
-        f"\n{END}\n\n_Last update: {date.today()}_"
+    block = "\n".join(lines) + f"\n\n_Last update: {date.today()}_"
+
+    new_content, count = re.subn(
+        rf"{START_RE}.*?{END_RE}",
+        f"<!-- TECH-PULSE:START -->\n{block}\n<!-- TECH-PULSE:END -->",
+        content,
+        flags=re.DOTALL,
     )
 
-    if START not in content or END not in content:
+    if count == 0:
         raise RuntimeError("TECH-PULSE markers not found in README")
 
-    before = content.split(START)[0]
-    after = content.split(END)[1]
-
-    updated = before + block + after
-
-    if updated != content:
-        README.write_text(updated, encoding="utf-8")
-        print("README updated")
-    else:
-        print("No changes")
+    README.write_text(new_content, encoding="utf-8")
+    print("README updated successfully")
 
 
 if __name__ == "__main__":
