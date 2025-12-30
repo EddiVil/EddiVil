@@ -1,0 +1,65 @@
+import requests
+from pathlib import Path
+from datetime import date, datetime, timezone
+
+README = Path("README.md")
+
+START = "<!-- TECH-PULSE:START -->"
+END = "<!-- TECH-PULSE:END -->"
+
+DAYS_NEW = 30
+
+
+def latest_release(repo):
+    url = f"https://api.github.com/repos/{repo}/releases/latest"
+    r = requests.get(url, timeout=10)
+    r.raise_for_status()
+    data = r.json()
+    tag = data["tag_name"]
+    published = datetime.fromisoformat(data["published_at"].replace("Z", "+00:00"))
+    return tag, published
+
+
+def status_icon(published_at):
+    days = (datetime.now(timezone.utc) - published_at).days
+    return "🟡" if days <= DAYS_NEW else "🟢"
+
+
+def main():
+    tools = {
+        "Terraform": "hashicorp/terraform",
+        "Terragrunt": "gruntwork-io/terragrunt",
+        "Kubernetes": "kubernetes/kubernetes",
+        "Docker": "docker/docker-ce",
+        "AWS CLI": "aws/aws-cli",
+        "Python": "python/cpython",
+    }
+
+    lines = []
+    for name, repo in tools.items():
+        tag, published = latest_release(repo)
+        icon = status_icon(published)
+        lines.append(f"- {icon} {name:<14}: {tag}")
+
+    content = README.read_text(encoding="utf-8")
+
+    block = (
+        f"{START}\n"
+        + "\n".join(lines)
+        + f"\n{END}\n\n_Last update: {date.today()}_"
+    )
+
+    before = content.split(START)[0]
+    after = content.split(END)[1]
+
+    updated = before + block + after
+
+    if updated != content:
+        README.write_text(updated, encoding="utf-8")
+        print("README updated")
+    else:
+        print("No changes")
+
+
+if __name__ == "__main__":
+    main()
