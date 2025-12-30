@@ -1,77 +1,83 @@
 import requests
-import re
+from datetime import datetime, timezone
 from pathlib import Path
-from datetime import date, datetime, timezone
 
-README = Path("README.md")
-
-START_RE = r"<!--\s*TECH-PULSE:START\s*-->"
-END_RE   = r"<!--\s*TECH-PULSE:END\s*-->"
-
-DAYS_NEW = 30
+OUT = Path("assets/pulse/tech.svg")
 HEADERS = {"User-Agent": "tech-pulse-bot"}
 
-def latest_release(repo):
-    url = f"https://api.github.com/repos/{repo}/releases/latest"
-    r = requests.get(url, headers=HEADERS, timeout=10)
+TOOLS = {
+    "Terraform": "hashicorp/terraform",
+    "Terragrunt": "gruntwork-io/terragrunt",
+    "Kubernetes": "kubernetes/kubernetes",
+    "Docker": "docker/docker-ce",
+    "AWS CLI": "aws/aws-cli",
+    "Python": "python/cpython",
+}
 
+DAYS_NEW = 30
+
+def latest_release(repo):
+    r = requests.get(
+        f"https://api.github.com/repos/{repo}/releases/latest",
+        headers=HEADERS,
+        timeout=10,
+    )
     if r.status_code == 404:
         tags = requests.get(
             f"https://api.github.com/repos/{repo}/tags",
             headers=HEADERS,
-            timeout=10
+            timeout=10,
         )
         tags.raise_for_status()
         return tags.json()[0]["name"], None
 
     r.raise_for_status()
     data = r.json()
-    published = datetime.fromisoformat(data["published_at"].replace("Z", "+00:00"))
+    published = datetime.fromisoformat(
+        data["published_at"].replace("Z", "+00:00")
+    )
     return data["tag_name"], published
 
-
-def status_icon(published_at):
-    if not published_at:
+def status_icon(published):
+    if not published:
         return "🟢"
-    days = (datetime.now(timezone.utc) - published_at).days
-    return "🟡" if days <= DAYS_NEW else "🟢"
-
+    age = (datetime.now(timezone.utc) - published).days
+    return "🟡" if age <= DAYS_NEW else "🟢"
 
 def main():
-    tools = {
-        "Terraform": "hashicorp/terraform",
-        "Terragrunt": "gruntwork-io/terragrunt",
-        "Kubernetes": "kubernetes/kubernetes",
-        "Docker": "docker/docker-ce",
-        "AWS CLI": "aws/aws-cli",
-        "Python": "python/cpython",
-    }
-
     lines = []
-    for name, repo in tools.items():
+    y = 55
+
+    for name, repo in TOOLS.items():
         try:
             tag, published = latest_release(repo)
-            lines.append(f"- {status_icon(published)} {name:<14}: {tag}")
+            icon = status_icon(published)
+            lines.append(
+                f'<text x="20" y="{y}" fill="#e5e7eb" font-size="13" font-family="Arial">'
+                f'{icon} {name}: {tag}'
+                f'</text>'
+            )
         except Exception:
-            lines.append(f"- 🔴 {name:<14}: unavailable")
+            lines.append(
+                f'<text x="20" y="{y}" fill="#fbbf24" font-size="13" font-family="Arial">'
+                f'🟠 {name}: unavailable'
+                f'</text>'
+            )
+        y += 18
 
-    content = README.read_text(encoding="utf-8")
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="360" height="150">
+  <rect width="100%" height="100%" rx="10" fill="#0f172a"/>
+  <text x="20" y="30" fill="#e5e7eb" font-size="16" font-family="Arial">
+    📡 Tech Pulse
+  </text>
+  {''.join(lines)}
+  <text x="20" y="140" fill="#9ca3af" font-size="11" font-family="Arial">
+    Updated: {datetime.utcnow().date()}
+  </text>
+</svg>
+"""
 
-    block = "\n".join(lines) + f"\n\n_Last update: {date.today()}_"
-
-    new_content, count = re.subn(
-        rf"{START_RE}.*?{END_RE}",
-        f"<!-- TECH-PULSE:START -->\n{block}\n<!-- TECH-PULSE:END -->",
-        content,
-        flags=re.DOTALL,
-    )
-
-    if count == 0:
-        raise RuntimeError("TECH-PULSE markers not found in README")
-
-    README.write_text(new_content, encoding="utf-8")
-    print("README updated successfully")
-
+    OUT.write_text(svg, encoding="utf-8")
 
 if __name__ == "__main__":
     main()
