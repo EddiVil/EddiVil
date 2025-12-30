@@ -35,7 +35,7 @@
   <img src="https://img.shields.io/badge/Linux-232F3E?style=flat&logo=linux&logoColor=white"/>
 </p>
 
-
+---
 
 ## 📡 Tech Pulse
 <!-- TECH-PULSE:START -->
@@ -56,15 +56,10 @@ _Last update: 2025-12-30_
 
 
 
----
 
-<h2 align="center">🔗 Connect with me</h2>
 
 <p align="center">
-  <a href="https://github.com/EddiVil">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="35"/>
-  </a>
-  &nbsp;&nbsp;&nbsp;
+
   <a href="https://www.linkedin.com/in/eddi-vilinets/">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="35"/>
   </a>
