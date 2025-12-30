@@ -1,0 +1,18 @@
+{
+  "title": "Tech Focus Map",
+  "cols": 8,
+  "cell": 18,
+  "gap": 4,
+  "palette": ["#2d2d2d", "#3b3b3b", "#4a4a4a", "#5a5a5a"],
+  "grid": [
+    [2,2,3,3,2,1,1,0],
+    [2,3,3,2,2,1,1,0],
+    [1,2,2,2,1,1,0,0],
+    [1,1,2,2,1,0,0,0],
+    [0,1,1,1,0,0,0,0],
+    [0,0,1,1,0,0,0,0]
+  ],
+  "legend": [
+    "AWS", "Terraform", "Terragrunt", "Docker", "GitHub Actions", "Linux", "DB", "Web"
+  ]
+}
