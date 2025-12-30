@@ -21,17 +21,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Debug - list files
-        run: |
-          pwd
-          ls -la
-          echo "---- README candidates ----"
-          find . -maxdepth 2 -iname "readme.md" -print
-          echo "---- First 120 lines of README.md ----"
-          sed -n '1,120p' README.md || true
-          echo "---- Grep markers ----"
-          grep -n "TECH-PULSE" -n README.md || true
-
       - name: Update Tech Pulse
         run: python scripts/tech_pulse.py
 
