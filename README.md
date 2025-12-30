@@ -70,8 +70,8 @@ _Last update: 2025-12-30_
       <h3>🔐 Security Pulse</h3>
       <p>CVEs · Advisories</p>
       <!-- SECURITY-PULSE:START -->
-      <p><i>checking...</i></p>
-      <!-- SECURITY-PULSE:END -->
+- CVE feed: unavailable
+<!-- SECURITY-PULSE:END -->
     </td>
   </tr>
 </table>
