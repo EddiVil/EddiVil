@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="150">
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  <text x="20" y="30" fill="#e5e7eb" font-size="16" font-family="Arial">
+    📡 Security Pulse
+  </text>
+  <text x="20" y="70" fill="#9ca3af" font-size="13" font-family="Arial">
+    initializing...
+  </text>
+</svg>
