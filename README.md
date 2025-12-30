@@ -53,8 +53,15 @@
       <h3>📡 Tech Pulse</h3>
       <p>Terraform · Docker · Kubernetes · Python</p>
       <!-- TECH-PULSE:START -->
-      <p><i>checking...</i></p>
-      <!-- TECH-PULSE:END -->
+- 🟡 Terraform     : v1.14.3
+- 🟡 Terragrunt    : v0.96.1
+- 🟡 Kubernetes    : v1.35.0
+- 🟢 Docker        : v19.03.14
+- 🟢 AWS CLI       : 2.32.26
+- 🟢 Python        : v3.15.0a3
+
+_Last update: 2025-12-30_
+<!-- TECH-PULSE:END -->
     </td>
 
     <td align="center" width="260">
