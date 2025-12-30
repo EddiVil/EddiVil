@@ -37,10 +37,13 @@
 
 
 
-## 🧩 Tech Focus Map
-<p align="center">
-  <img src="assets/tech-focus-map.svg" alt="Tech Focus Map" />
-</p>
+## 📡 Tech Pulse
+<!-- TECH-PULSE:START -->
+- checking...
+<!-- TECH-PULSE:END -->
+
+
+
 
 
 
