@@ -45,8 +45,10 @@
       <h3>☁️ Cloud Pulse</h3>
       <p>AWS · Azure · GCP</p>
       <!-- CLOUD-PULSE:START -->
-      <p><i>checking...</i></p>
-      <!-- CLOUD-PULSE:END -->
+- AWS: 5 updates (7d)
+- Azure: 0 updates (7d)
+- GCP: 0 updates (7d)
+<!-- CLOUD-PULSE:END -->
     </td>
 
     <td align="center" width="260">
