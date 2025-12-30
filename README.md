@@ -39,15 +39,14 @@
 
 <h2 align="center">📊 Mini Dashboard</h2>
 
-<!-- Cards row -->
 <p align="center">
-  <img src="assets/pulse/cloud.svg" height="150" />
-  <img src="assets/pulse/tech.svg" height="150" />
-  <img src="assets/pulse/security.svg" height="150" />
+  <img src="assets/pulse/cloud.svg" width="360" />
+  <img src="assets/pulse/tech.svg" width="360" />
+  <img src="assets/pulse/security.svg" width="360" />
 </p>
 
-<!-- Optional: small caption -->
 <p align="center"><i>Auto-updated via GitHub Actions</i></p>
+
 
 <hr/>
 
