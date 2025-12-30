@@ -8,7 +8,7 @@
   <img src="https://readme-typing-svg.herokuapp.com?lines=Clean+code+%7C+Automation+%7C+Practical+systems;Cloud+%26+DevOps+enthusiast;Learning+by+building&center=true&width=520&height=45" />
 </p>
 
----
+<hr/>
 
 <h2 align="center">🛠️ Tech Stack</h2>
 
@@ -35,58 +35,27 @@
   <img src="https://img.shields.io/badge/Linux-232F3E?style=flat&logo=linux&logoColor=white"/>
 </p>
 
----
+<hr/>
 
 <h2 align="center">📊 Mini Dashboard</h2>
 
-<table align="center">
-  <tr>
-    <td align="center" width="260">
-      <h3>☁️ Cloud Pulse</h3>
-      <p>AWS · Azure · GCP</p>
-      <!-- CLOUD-PULSE:START -->
-- AWS: 5 updates (7d)
-- Azure: 0 updates (7d)
-- GCP: 0 updates (7d)
-<!-- CLOUD-PULSE:END -->
-    </td>
+<!-- Cards row -->
+<p align="center">
+  <img src="assets/pulse/cloud.svg" height="150" />
+  <img src="assets/pulse/tech.svg" height="150" />
+  <img src="assets/pulse/security.svg" height="150" />
+</p>
 
-    <td align="center" width="260">
-      <h3>📡 Tech Pulse</h3>
-      <p>Terraform · Docker · Kubernetes · Python</p>
-      <!-- TECH-PULSE:START -->
-- 🟡 Terraform     : v1.14.3
-- 🟡 Terragrunt    : v0.96.1
-- 🟡 Kubernetes    : v1.35.0
-- 🟢 Docker        : v19.03.14
-- 🟢 AWS CLI       : 2.32.26
-- 🟢 Python        : v3.15.0a3
+<!-- Optional: small caption -->
+<p align="center"><i>Auto-updated via GitHub Actions</i></p>
 
-_Last update: 2025-12-30_
-<!-- TECH-PULSE:END -->
-    </td>
-
-    <td align="center" width="260">
-      <h3>🔐 Security Pulse</h3>
-      <p>CVEs · Advisories</p>
-      <!-- SECURITY-PULSE:START -->
-- CVE feed: unavailable
-<!-- SECURITY-PULSE:END -->
-    </td>
-  </tr>
-</table>
-
-
----
+<hr/>
 
 <p align="center">
-
   <a href="https://www.linkedin.com/in/eddi-vilinets/">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="32"/>
   </a>
 </p>
-
----
 
 <p align="center">
   <i>“Build things that last, automate what repeats.”</i>
