@@ -2,7 +2,10 @@ import requests
 from pathlib import Path
 from datetime import date, datetime, timezone
 
-README = Path("README.md")
+README = next(
+    p for p in Path(".").iterdir()
+    if p.name.lower() == "readme.md"
+)
 
 START = "<!-- TECH-PULSE:START -->"
 END = "<!-- TECH-PULSE:END -->"
