@@ -12,28 +12,39 @@
 
 <h2 align="center">🛠️ Tech Stack</h2>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-232F3E?style=flat&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Java-232F3E?style=flat&logo=openjdk&logoColor=white"/>
-  <img src="https://img.shields.io/badge/C-232F3E?style=flat&logo=c&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-232F3E?style=flat&logo=javascript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/HTML5-232F3E?style=flat&logo=html5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CSS3-232F3E?style=flat&logo=css3&logoColor=white"/>
-</p>
+![Lang](https://img.shields.io/badge/Lang-Python-2F855A?style=flat&logo=python)
+![Lang](https://img.shields.io/badge/Lang-C-2F855A?style=flat&logo=c)
+![Lang](https://img.shields.io/badge/Lang-Java-2F855A?style=flat&logo=openjdk)
+![Lang](https://img.shields.io/badge/Lang-JavaScript-2F855A?style=flat&logo=javascript)
+![Lang](https://img.shields.io/badge/Lang-Bash-2F855A?style=flat&logo=gnubash)
+![Lang](https://img.shields.io/badge/Lang-PowerShell-2F855A?style=flat&logo=powershell)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Terraform-232F3E?style=flat&logo=terraform&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-232F3E?style=flat&logo=docker&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GitHub_Actions-232F3E?style=flat&logo=githubactions&logoColor=white"/>
-</p>
+![FE](https://img.shields.io/badge/FE-HTML-319795?style=flat&logo=html5)
+![FE](https://img.shields.io/badge/FE-CSS-319795?style=flat&logo=css3)
+![FE](https://img.shields.io/badge/FE-React-319795?style=flat&logo=react)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/MySQL-232F3E?style=flat&logo=mysql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-232F3E?style=flat&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Git-232F3E?style=flat&logo=git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Linux-232F3E?style=flat&logo=linux&logoColor=white"/>
-</p>
+![DB](https://img.shields.io/badge/DB-PostgreSQL-805AD5?style=flat&logo=postgresql)
+![DB](https://img.shields.io/badge/DB-MySQL-805AD5?style=flat&logo=mysql)
+
+![Cloud](https://img.shields.io/badge/Cloud-AWS-4A5568?style=flat&logo=amazonaws)
+![Cloud](https://img.shields.io/badge/Cloud-Azure_DevOps-4A5568?style=flat&logo=azuredevops)
+![Cloud](https://img.shields.io/badge/Cloud-Terraform-4A5568?style=flat&logo=terraform)
+![Cloud](https://img.shields.io/badge/Cloud-Terragrunt-4A5568?style=flat)
+![Cloud](https://img.shields.io/badge/Cloud-Docker-4A5568?style=flat&logo=docker)
+![Cloud](https://img.shields.io/badge/Cloud-Docker--Compose-4A5568?style=flat)
+![Cloud](https://img.shields.io/badge/Cloud-Kubernetes-4A5568?style=flat&logo=kubernetes)
+![Cloud](https://img.shields.io/badge/Cloud-NGINX-4A5568?style=flat&logo=nginx)
+
+![CI](https://img.shields.io/badge/CI-Git-6B7280?style=flat&logo=git)
+![CI](https://img.shields.io/badge/CI-GitHub-6B7280?style=flat&logo=github)
+![CI](https://img.shields.io/badge/CI-GitHub_Actions-6B7280?style=flat&logo=githubactions)
+![CI](https://img.shields.io/badge/CI-Jenkins-6B7280?style=flat&logo=jenkins)
+
+![Obs](https://img.shields.io/badge/Obs-Grafana-8B5CF6?style=flat&logo=grafana)
+
+![Tools](https://img.shields.io/badge/Tools-Postman-9CA3AF?style=flat&logo=postman)
+![Tools](https://img.shields.io/badge/Tools-Wireshark-9CA3AF?style=flat&logo=wireshark)
+
 
 <hr/>
 
