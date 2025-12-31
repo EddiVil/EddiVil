@@ -1,11 +1,14 @@
 <h1 align="center">👋 Hi, I'm Eddi</h1>
 
-<p align="center">
-  I enjoy building things that combine <b>clean code</b>, <b>automation</b>, and <b>practical systems</b>.
+<p>
+<br/>
+  I’m a cloud and DevOps-focused engineer with a strong programming background.<br/>
+  I enjoy building reliable systems, automating infrastructure, and approaching problems with a software engineering mindset focused on clean code, efficiency, and long-term maintainability.
 </p>
 
+
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?lines=Clean+code+%7C+Automation+%7C+Practical+systems;Cloud+%26+DevOps+enthusiast;Learning+by+building&center=true&width=520&height=45" />
+  <img src="https://readme-typing-svg.herokuapp.com?lines=Cloud+%26+DevOps+Engineer;Automation+%7C+IaC+%7C+CI%2FCD;Software+Engineering+Mindset&center=true&width=520&height=45" />
 </p>
 
 <hr/>
@@ -31,8 +34,6 @@
 ![Cloud](https://img.shields.io/badge/Cloud-Terraform-4A5568?style=flat&logo=terraform)
 ![Cloud](https://img.shields.io/badge/Cloud-Terragrunt-4A5568?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-Docker-4A5568?style=flat&logo=docker)
-![Cloud](https://img.shields.io/badge/Cloud-Docker--Compose-4A5568?style=flat)
-![Cloud](https://img.shields.io/badge/Cloud-Kubernetes-4A5568?style=flat&logo=kubernetes)
 ![Cloud](https://img.shields.io/badge/Cloud-NGINX-4A5568?style=flat&logo=nginx)
 
 ![CI](https://img.shields.io/badge/CI-Git-6B7280?style=flat&logo=git)
