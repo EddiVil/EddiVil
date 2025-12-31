@@ -57,16 +57,11 @@
   <img src="assets/pulse/security.svg" width="360" />
 </p>
 
-<p align="center"><i>Auto-updated via GitHub Actions</i></p>
 
 
 <hr/>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/eddi-vilinets/">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="32"/>
-  </a>
-</p>
+
 
 <p align="center">
   <i>“Build things that last, automate what repeats.”</i>
